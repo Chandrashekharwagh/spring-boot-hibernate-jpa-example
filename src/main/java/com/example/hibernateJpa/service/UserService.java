@@ -17,17 +17,17 @@ public class UserService {
     private UserRepository userRepository;
 
     public List<User> getAllUsers() {
-        logger.info("Users Retrieved");
+        logger.info("Users Retrieved in Services");
         return userRepository.findAll();
     }
 
     public User getUserById(Long id) {
-        logger.info("User detected by ID");
+        logger.info("User detected by ID in Services");
         return userRepository.findById(id).orElse(null);
     }
 
     public User createUser(User user) {
-        logger.info("User Created");
+        logger.info("User Created in Services");
         return userRepository.save(user);
     }
 
@@ -37,7 +37,7 @@ public class UserService {
             user.setFirstName(updatedUser.getFirstName());
             user.setLastName(updatedUser.getLastName());
             user.setEmail(updatedUser.getEmail());
-            logger.info("User Updated");
+            logger.info("User Updated in Services");
             return userRepository.save(user);
         }
         return null;
