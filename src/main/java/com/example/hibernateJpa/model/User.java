@@ -1,6 +1,6 @@
 package com.example.hibernateJpa.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 @Entity
