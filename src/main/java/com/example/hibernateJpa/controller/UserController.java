@@ -21,13 +21,13 @@ public class UserController {
 
     @GetMapping
     public List<User> getAllUsers() {
-        logger.info("/Retrieving users from Get");
+        logger.info("Retrieving users from Get in Controller");
         return userService.getAllUsers();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
-        logger.info("/Retrieving users from Get by ID");
+        logger.info("Retrieving users from Get by ID in Controller");
         User user = userService.getUserById(id);
         if (user != null) {
             return ResponseEntity.ok(user);
@@ -37,13 +37,13 @@ public class UserController {
 
     @PostMapping
     public User createUser(@RequestBody User user) {
-        logger.info("/Creating users from Post");
+        logger.info("Creating users from Post in Controller");
         return userService.createUser(user);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
-        logger.info("/Updating users from Put");
+        logger.info("Updating users from Put in Controller");
         User updatedUser = userService.updateUser(id, user);
         if (updatedUser != null) {
             return ResponseEntity.ok(updatedUser);
@@ -53,7 +53,7 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-        logger.info("/deleting users from delete");
+        logger.info("Deleting users from delete in Controller");
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
     }
